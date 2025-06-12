@@ -1,81 +1,155 @@
-body {
+/* Reset and base */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* FIX: No horizontal scroll */
+}
+
+body {
   font-family: 'Arial', sans-serif;
   background-image: url("bg1.jpeg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: white;
+  min-height: 100vh;
 }
 
 .top-banner {
   background: black;
   color: yellow;
   padding: 10px;
-  font-size: 20px;
+  font-size: 4vw;
+  white-space: nowrap;
 }
 
 .container {
-  padding: 20px;
+  padding: 20px 10px;
   text-align: center;
+  max-width: 100%;
 }
 
+/* Diary name input */
 #diaryNameInput {
   padding: 10px;
-  font-size: 18px;
-  width: 60%;
+  font-size: 4.5vw;
+  width: 90%;
+  max-width: 500px;
   margin-bottom: 10px;
   border-radius: 10px;
   border: none;
 }
 
+/* Date box */
 .date-box {
   background: rgba(0, 0, 0, 0.7);
-  font-size: 18px;
+  font-size: 4vw;
   font-weight: bold;
   padding: 10px;
-  width: 250px;
-  margin: 10px auto;
+  width: auto;
+  display: inline-block;
   border-radius: 10px;
   border: 2px solid yellow;
+  margin-bottom: 10px;
 }
 
+/* Text area */
 textarea {
   width: 90%;
+  max-width: 600px;
   height: 150px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 4vw;
   border-radius: 10px;
   border: none;
   resize: none;
   margin-bottom: 20px;
 }
 
+/* Buttons */
 .navigation-buttons button,
 .control-buttons button {
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin: 5px;
   background: black;
   color: white;
   border: none;
   border-radius: 10px;
+  font-size: 4vw;
   cursor: pointer;
 }
 
 .navigation-buttons span {
-  font-size: 16px;
+  font-size: 4vw;
   margin: 0 10px;
+  display: inline-block;
 }
 
+/* Popups */
 .popup {
   background: rgba(0, 0, 0, 0.8);
   padding: 15px;
-  width: 300px;
+  width: 90%;
+  max-width: 300px;
   margin: 20px auto;
   border-radius: 10px;
+  font-size: 4vw;
 }
 
+.popup textarea {
+  width: 100%;
+  height: 80px;
+  font-size: 4vw;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.popup button {
+  font-size: 4vw;
+  padding: 8px 15px;
+  border-radius: 8px;
+  background: yellow;
+  color: black;
+}
+
+/* Note text */
 .note {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 3.5vw;
   color: #ccc;
+}
+
+/* Larger screens (tablets/desktops) */
+@media (min-width: 768px) {
+  .top-banner {
+    font-size: 1.5rem;
+  }
+
+  #diaryNameInput, textarea {
+    font-size: 1rem;
+  }
+
+  .date-box {
+    font-size: 1.2rem;
+  }
+
+  .navigation-buttons button,
+  .control-buttons button,
+  .navigation-buttons span {
+    font-size: 1rem;
+  }
+
+  .popup,
+  .popup textarea,
+  .popup button,
+  .note {
+    font-size: 1rem;
+  }
 }
