@@ -1,41 +1,35 @@
-// Login function
-function login() {
-  const username = document.getElementById("username").value;
+document.getElementById("loginBtn").addEventListener("click", function () {
+  const diaryName = document.getElementById("customName").value;
   const password = document.getElementById("password").value;
 
-  // Save diary name to localStorage
-  const diaryName = document.getElementById("customName").value;
-  localStorage.setItem("diaryName", diaryName);
+  const savedPassword = localStorage.getItem("password");
 
-  if (username && password) {
-    alert("Login successful! (This is a temporary demo. Backend will be added soon.)");
+  if (!password || !diaryName) {
+    alert("Please enter both Diary Name and Password.");
+    return;
+  }
 
-    // Redirect to diary page
+  if (savedPassword === null || savedPassword === password) {
+    localStorage.setItem("diaryName", diaryName);
+    localStorage.setItem("password", password); // Save password if first time
     window.location.href = "diary.html";
   } else {
-    alert("Please enter both name and password.");
+    alert("Incorrect password.");
   }
-}
+});
 
-// Show or hide forgot password box
-function showForgot() {
-  const forgotBox = document.getElementById("forgotBox");
-  if (forgotBox.style.display === "none" || forgotBox.style.display === "") {
-    forgotBox.style.display = "block";
-  } else {
-    forgotBox.style.display = "none";
+// Forgot password modal
+document.getElementById("forgotBtn").addEventListener("click", function () {
+  document.getElementById("forgotModal").style.display = "block";
+});
+
+document.getElementById("resetBtn").addEventListener("click", function () {
+  const newPassword = document.getElementById("newPassword").value;
+  if (newPassword.trim() === "") {
+    alert("Please enter a new password.");
+    return;
   }
-}
-
-// Reset password (demo only)
-function resetPassword() {
-  const newPassword = document.getElementById("newPass").value;
-
-  if (newPassword.trim().length < 4) {
-    alert("Password too short. Please enter at least 4 characters.");
-  } else {
-    alert("Password changed successfully! (This is a demo. Will be saved in backend later.)");
-    document.getElementById("forgotBox").style.display = "none";
-    document.getElementById("newPass").value = "";
-  }
-}
+  localStorage.setItem("password", newPassword);
+  alert("Password changed successfully!");
+  document.getElementById("forgotModal").style.display = "none";
+});
