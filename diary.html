@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MemoryLeaf Diary</title>
+  <link rel="stylesheet" href="diary.css">
+</head>
+<body>
+  <marquee behavior="scroll" direction="left" class="top-banner">
+    Memories created by Karthik Kandimalla
+  </marquee>
+
+  <div class="container">
+    <input type="text" id="diaryNameInput" placeholder="Enter your diary name" />
+    
+    <div class="date-box" id="dateBox"></div>
+
+    <textarea id="diaryEntry" maxlength="250" placeholder="Write your memory here..."></textarea>
+
+    <div class="navigation-buttons">
+      <button onclick="prevPage()">⬅ Previous</button>
+      <span id="pageNum">Page 1</span>
+      <button onclick="nextPage()">➡ Next</button>
+    </div>
+
+    <div class="control-buttons">
+      <button onclick="toggleSound()">🔊 Sound Off</button>
+      <button onclick="toggleBrightness()">🌞</button>
+      <button onclick="showHelp()">❓ Help</button>
+      <button onclick="showFeedback()">📝 Feedback</button>
+    </div>
+
+    <div id="helpBox" class="popup" style="display:none">
+      <p>This is a personal diary app. Use it to record your memories.</p>
+      <p>Developer email: <b>karthikchowdar34036@gmail.com</b></p>
+    </div>
+
+    <div id="feedbackBox" class="popup" style="display:none">
+      <textarea placeholder="Write your feedback..."></textarea>
+      <button onclick="alert('Thank you for your feedback!')">Submit</button>
+    </div>
+
+    <p class="note">Your data will not be recorded. Your data is purely personal. Stay safe.</p>
+  </div>
+
+  <audio id="bgMusic" src="upbeat-summer-background-music-357758.mp3" loop></audio>
+  <script src="diary.js"></script>
+</body>
+</html>

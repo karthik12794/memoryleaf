@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-image: url("bg1.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.top-banner {
+  background: black;
+  color: yellow;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+#diaryNameInput {
+  padding: 10px;
+  font-size: 18px;
+  width: 60%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.date-box {
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  width: 250px;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 2px solid yellow;
+}
+
+textarea {
+  width: 90%;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.navigation-buttons button,
+.control-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.navigation-buttons span {
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.popup {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.note {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
