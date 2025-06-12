@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MemoryLeaf Diary</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MemoryLeaf Diary - Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <marquee class="scroll">Memories was created by Karthik Kandimalla</marquee>
+  <div class="login-container">
+    <h1>Welcome to Your Memories</h1>
+    <input type="text" id="customName" placeholder="Enter Diary Name" />
+    <input type="password" id="password" placeholder="Enter Password" />
+    <button id="loginBtn">Login</button>
+    <button id="forgotBtn">Forgot Password</button>
+  </div>
 
-  <div class="welcome-container">
-    <div class="glass-box">
-      <h1 class="diary-title">Welcome to Your Memories</h1>
-      <input type="text" placeholder="Enter Your Name" id="username" />
-      <input type="password" placeholder="Enter Password" id="password" />
-      <button onclick="login()">Login</button>
-      <button onclick="showForgot()">Forgot Password?</button>
+  <!-- Forgot Password Modal -->
+  <div id="forgotModal" class="modal">
+    <div class="modal-content">
+      <h2>Reset Password</h2>
+      <input type="password" id="newPassword" placeholder="Enter New Password" />
+      <button id="resetBtn">Reset Password</button>
     </div>
   </div>
-
-  <div class="forgot-box" id="forgotBox" style="display: none;">
-    <input type="password" id="newPass" placeholder="Enter new password" />
-    <button onclick="resetPassword()">Change Password</button>
-  </div>
-
-  <!-- Diary container and other parts will go below this later -->
 
   <script src="script.js"></script>
 </body>
